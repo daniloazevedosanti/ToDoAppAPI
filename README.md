@@ -40,7 +40,7 @@ O TaskManager permite criação, edição, listagem e remoção de tarefas com c
 ## 🧩 Estrutura sugerida do repositório
 
 ```
-/taskmanager
+/ToDoAppAPI
   /To-DoAppWeb/          				# projeto Angular
   /To-DoAppAPI/ToDoAppAPI.sln           # projeto ASP.NET Core Web API
   README.md
