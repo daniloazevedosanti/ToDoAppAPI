@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  // Não precisamos mais da propriedade isMenuCollapsed
-  // pois o Bootstrap nativo cuida do colapso automaticamente
+
 }

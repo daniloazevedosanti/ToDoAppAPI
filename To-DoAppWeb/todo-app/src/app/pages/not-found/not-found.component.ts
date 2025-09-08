@@ -1,4 +1,3 @@
-// src/app/pages/not-found/not-found.component.ts
 import { Component } from '@angular/core';
 
 @Component({
