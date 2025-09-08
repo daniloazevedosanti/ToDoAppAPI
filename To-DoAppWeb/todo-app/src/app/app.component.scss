@@ -1,0 +1,36 @@
+.main-content {
+  min-height: calc(100vh - 160px);
+  padding: 1rem 0;
+}
+
+footer {
+  margin-top: auto;
+
+  .social-links {
+    a {
+      font-size: 1.25rem;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        opacity: 1;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0.5rem 0;
+  }
+
+  footer {
+    text-align: center;
+
+    .text-md-end {
+      text-align: center !important;
+      margin-top: 1rem;
+    }
+  }
+}

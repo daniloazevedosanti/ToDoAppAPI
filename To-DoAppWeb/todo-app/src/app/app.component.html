@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<app-loading-spinner></app-loading-spinner>
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="bg-dark text-white py-4 mt-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <p class="mb-0">
+          <i class="bi bi-check2-circle me-2"></i>
+          <strong>TaskManager</strong> &copy; {{ currentYear }} - Sistema de Gerenciamento de Tarefas
+        </p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <div class="social-links">
+          <a href="https://github.com/" class="text-white me-3" target="_blank" title="GitHub">
+            <i class="bi bi-github"></i>
+          </a>
+          <a href="#" class="text-white me-3" title="Documentação">
+            <i class="bi bi-book"></i>
+          </a>
+          <a href="#" class="text-white" title="Suporte">
+            <i class="bi bi-question-circle"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

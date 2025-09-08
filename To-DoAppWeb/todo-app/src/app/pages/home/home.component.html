@@ -1,0 +1,54 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero-section bg-primary text-white py-5 mb-5 rounded">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h1 class="display-4 fw-bold mb-3">
+            <i class="bi bi-check2-circle me-2"></i>
+            Gerenciador de Tarefas
+          </h1>
+          <p class="lead mb-4">Organize suas tarefas de forma simples e eficiente. Nunca mais perca prazos importantes!</p>
+          <div class="d-flex gap-2 flex-wrap">
+            <a class="btn btn-light btn-lg" href="#taskForm" role="button">
+              <i class="bi bi-plus-circle me-1"></i> Nova Tarefa
+            </a>
+            <a class="btn btn-outline-light btn-lg" routerLink="/tasks" role="button">
+              <i class="bi bi-list-task me-1"></i> Ver Todas
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 d-none d-lg-block">
+          <div class="text-center">
+            <i class="bi bi-check2-all" style="font-size: 6rem; opacity: 0.8;"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="row">
+      <!-- Formulário -->
+      <div class="col-lg-5 mb-4">
+        <div id="taskForm">
+          <app-task-form
+            [task]="editingTask"
+            (submitTask)="onTaskSubmit($event)"
+            (cancelEdit)="onCancelEdit()">
+          </app-task-form>
+        </div>
+      </div>
+
+      <!-- Lista de Tarefas -->
+      <div class="col-lg-7">
+        <app-task-list
+          [tasks]="tasks"
+          (editTask)="onEditTask($event)"
+          (deleteTask)="onDeleteTask($event)"
+          (toggleStatus)="onToggleTaskStatus($event)">
+        </app-task-list>
+      </div>
+    </div>
+  </div>
+</div>

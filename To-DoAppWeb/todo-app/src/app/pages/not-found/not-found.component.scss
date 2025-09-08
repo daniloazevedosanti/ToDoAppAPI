@@ -1,0 +1,42 @@
+.not-found-container {
+  display: flex;
+  align-items: center;
+  min-height: 60vh;
+  padding: 2rem 0;
+}
+
+.error-icon {
+  font-size: 4rem;
+  color: #6c757d;
+  opacity: 0.5;
+}
+
+.display-1 {
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.btn {
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+
+  i {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .display-1 {
+    font-size: 4rem;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .d-md-flex {
+    flex-direction: column;
+  }
+}

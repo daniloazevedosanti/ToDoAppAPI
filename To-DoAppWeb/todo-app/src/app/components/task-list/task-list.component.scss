@@ -1,0 +1,49 @@
+.task-list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tasks-container {
+  min-height: 300px;
+}
+
+.task-card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+}
+
+.task-completed {
+  opacity: 0.8;
+
+  .card-title {
+    text-decoration: line-through;
+  }
+}
+
+.btn-group {
+  .btn {
+    border-radius: 0.375rem;
+    margin: 0 0.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn-group {
+    width: 100%;
+    margin-top: 1rem;
+
+    .btn {
+      flex: 1;
+      margin: 0.1rem;
+    }
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+}

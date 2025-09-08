@@ -1,0 +1,100 @@
+<div class="task-list-container">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="mb-0">
+      <i class="bi bi-list-task text-primary me-2"></i>
+      Minhas Tarefas
+      <span class="badge bg-secondary ms-2">{{ filteredTasks.length }}</span>
+    </h2>
+  </div>
+
+  <!-- Filtros e Busca -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label">Filtrar por status</label>
+          <div class="btn-group w-100" role="group">
+            <button type="button" class="btn btn-outline-primary"
+                    [class.active]="filter === 'all'"
+                    (click)="onFilterChange('all')">
+              <i class="bi bi-collection me-1"></i> Todas
+            </button>
+            <button type="button" class="btn btn-outline-success"
+                    [class.active]="filter === 'completed'"
+                    (click)="onFilterChange('completed')">
+              <i class="bi bi-check-circle me-1"></i> Concluídas
+            </button>
+            <button type="button" class="btn btn-outline-warning"
+                    [class.active]="filter === 'pending'"
+                    (click)="onFilterChange('pending')">
+              <i class="bi bi-hourglass-split me-1"></i> Pendentes
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Buscar tarefas</label>
+          <div class="input-group">
+            <span class="input-group-text">
+              <i class="bi bi-search"></i>
+            </span>
+            <input type="text" class="form-control" placeholder="Digite para buscar..."
+                   [(ngModel)]="searchTerm" (input)="onSearchChange(searchTerm)">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lista de Tarefas -->
+  <div class="tasks-container">
+    <div *ngIf="filteredTasks.length === 0" class="text-center py-5">
+      <i class="bi bi-inbox display-4 text-muted"></i>
+      <h4 class="text-muted mt-3">Nenhuma tarefa encontrada</h4>
+      <p class="text-muted">Tente ajustar os filtros ou crie uma nova tarefa.</p>
+    </div>
+
+    <div *ngIf="filteredTasks.length > 0" class="row g-4">
+      <div *ngFor="let task of filteredTasks; trackBy: trackByTaskId" class="col-12">
+        <div class="card task-card h-100" [class.task-completed]="task.concluida">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h5 class="card-title mb-0">{{ task.titulo }}</h5>
+              <span class="badge" [ngClass]="task.concluida ? 'bg-success' : 'bg-warning'">
+                {{ task.concluida ? 'Concluída' : 'Pendente' }}
+              </span>
+            </div>
+
+            <p *ngIf="task.descricao" class="card-text text-muted">
+              {{ task.descricao }}
+            </p>
+
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <small class="text-muted">
+                <i class="bi bi-calendar me-1"></i>
+                Criada em: {{ task.dataCriacao | date:'dd/MM/yyyy HH:mm' }}
+              </small>
+
+              <div class="btn-group">
+                <button class="btn btn-sm"
+                        [ngClass]="task.concluida ? 'btn-outline-warning' : 'btn-outline-success'"
+                        (click)="onToggleStatus(task)">
+                  <i class="bi" [class.bi-x-circle]="task.concluida" [class.bi-check-circle]="!task.concluida"></i>
+                  {{ task.concluida ? 'Reabrir' : 'Concluir' }}
+                </button>
+
+                <button class="btn btn-sm btn-outline-primary" (click)="onEditTask(task)">
+                  <i class="bi bi-pencil"></i> Editar
+                </button>
+
+                <button class="btn btn-sm btn-outline-danger" (click)="onDeleteTask(task.id)">
+                  <i class="bi bi-trash"></i> Excluir
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
