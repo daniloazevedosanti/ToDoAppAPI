@@ -160,11 +160,11 @@ A aplicação Angular abrirá em `http://localhost:4200`.
 
 ## 📦 Exemplo rápido de endpoints (API)
 
-- `GET /api/Tarefas` — listar tarefas  
-- `GET /api/Tarefas/{id}` — obter tarefa por id  
-- `POST /api/Tarefas` — criar tarefa  
-- `PUT /api/Tarefas/{id}` — atualizar tarefa  
-- `DELETE /api/Tarefas/{id}` — deletar tarefa
+- `GET /api/tasks` — listar tarefas  
+- `GET /api/tasks/{id}` — obter tarefa por id  
+- `POST /api/tasks` — criar tarefa  
+- `PUT /api/tasks/{id}` — atualizar tarefa  
+- `DELETE /api/tasks/{id}` — deletar tarefa
 
 ---
 
@@ -196,15 +196,15 @@ A aplicação Angular abrirá em `http://localhost:4200`.
 
 ## 📜 Licença
 
+Este projeto pode usar a licença que preferir. Exemplo: MIT License.
 
 ```
 MIT License
-© 2025 Danilo Azevedo Santos
+© 2025 Seu Nome
 ```
 
 ---
 
 ## 📞 Contato
 
-danilo.azevedosanti@gmail.com
-linkedin.com/in/dansantosaz/
+Se quiser, adicione informações de contato (email, LinkedIn) ou instruções adicionais para deploy/CI.
