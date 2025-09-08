@@ -131,7 +131,7 @@ https://localhost:7088/swagger
 
 1. Abra o diretório do frontend:
 ```bash
-cd frontend
+cd To-DoAppWeb/todo-app
 ```
 
 2. Instale dependências:
