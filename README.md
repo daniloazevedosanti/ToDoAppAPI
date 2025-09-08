@@ -52,10 +52,10 @@ O TaskManager permite criação, edição, listagem e remoção de tarefas com c
 
 - Node.js (v16+ recomendado)
 - npm ou yarn
-- Angular CLI (opcional, para desenvolvimento local)
-- .NET SDK 6.0 ou 7.0
+- Angular CLI
+- .NET SDK 8.0
 - SQL Server (local ou remoto)
-- dotnet-ef (para migrations, opcional: `dotnet tool install --global dotnet-ef`)
+- dotnet-ef (para migrations: `dotnet tool install --global dotnet-ef`)
 
 ---
 
